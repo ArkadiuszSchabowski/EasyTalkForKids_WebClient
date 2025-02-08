@@ -5,6 +5,8 @@ import { HomeComponent } from 'src/app/components/public/home/home.component';
 import { LandComponent } from 'src/app/components/public/land/land.component';
 import { LoginComponent } from 'src/app/components/public/login/login.component';
 import { RegisterComponent } from 'src/app/components/public/register/register.component';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { RegisterComponent } from 'src/app/components/public/register/register.c
     LoginComponent,
     RegisterComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, MaterialModule],
   exports: [HomeComponent, LandComponent, LoginComponent, RegisterComponent],
 })
 export class PublicModule {}
