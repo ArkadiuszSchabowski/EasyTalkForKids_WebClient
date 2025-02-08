@@ -1,1 +1,26 @@
-<p>navbar works!</p>
+<div id="container-navbar">
+  <div id="container-navbar-mobile">
+    <button mat-button [matMenuTriggerFor]="menu" id="navbar-mobile-button-menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button class="navbar-mobile-button" mat-menu-item routerLink="/">
+        Strona główna
+      </button>
+      <button class="navbar-mobile-button" mat-menu-item routerLink="/land">
+        Wybór krainy
+      </button>
+      <button class="navbar-mobile-button" mat-menu-item routerLink="/login">
+        Logowanie
+      </button>
+      <button class="navbar-mobile-button" mat-menu-item routerLink="/register">
+        Rejestracja
+      </button>
+    </mat-menu>
+  </div>
+  <div id="container-navbar-web"></div>
+  <button class="navbar-web-button" routerLink="/">Strona główna</button>
+  <button class="navbar-web-button" routerLink="/land">Wybór krainy</button>
+  <button class="navbar-web-button" routerLink="/login">Logowanie</button>
+  <button class="navbar-web-button" routerLink="/register">Rejestracja</button>
+</div>

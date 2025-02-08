@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@include mat.core();
+
+$primary: mat.define-palette(mat.$light-green-palette, 300);
+$accent: mat.define-palette(mat.$deep-purple-palette, 700);
+
+$warn: mat.define-palette(mat.$red-palette);
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::ng-deep .mat-mdc-menu-content{
+  background-color: mat.get-color-from-palette($accent, 700) !important;
+}
