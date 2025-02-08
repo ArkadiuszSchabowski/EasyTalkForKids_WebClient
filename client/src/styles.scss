@@ -17,9 +17,107 @@ $theme: mat.define-light-theme(
 
 @include mat.all-component-themes($theme);
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: mat.get-color-from-palette($primary);
+}
 
-::ng-deep .mat-mdc-menu-content{
+mat-icon {
+  font-size: 16px;
+  color: white !important;
+}
+
+mat-label {
+  color: mat.get-color-from-palette($accent);
+}
+
+::ng-deep mat-card {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: auto !important;
+  border: 2px solid white !important;
+  border-radius: 25px !important;
+  background-color: mat.get-color-from-palette($accent) !important;
+}
+
+::ng-deep mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-mdc-menu-content {
   background-color: mat.get-color-from-palette($accent, 700) !important;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}
+
+.component-container {
+  min-width: 400px;
+  min-height: calc(100% - 110px);
+  padding: 90px 0 20px 0;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.title-label {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: white;
+}
+
+.error-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  font-size: 16px;
+  color: orangered;
+}
+
+.white-button {
+  font-size: 22px;
+  font-weight: bold;
+  color: mat.get-color-from-palette($accent) !important;
+  background-color: white !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .component-container {
+    min-height: calc(100% - 130px);
+    padding-top: 110px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .component-container {
+    min-height: calc(100% - 130px);
+    padding-top: 110px;
+  }
 }
