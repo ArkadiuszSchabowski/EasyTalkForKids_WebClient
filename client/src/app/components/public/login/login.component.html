@@ -1,1 +1,49 @@
-<p>login works!</p>
+<div id="login-container" class="component-container">
+  <form #loginForm="ngForm" (ngSubmit)="tryLogin(loginForm)" autocomplete="off">
+    <mat-card>
+      <mat-card-content>
+        <div id="login-form">
+          <label class="title-label">Formularz logowania</label>
+          <mat-form-field class="margin-top-20">
+            <mat-label>Adres e-mail</mat-label>
+            <input matInput name="email" [(ngModel)]="model.email" />
+          </mat-form-field>
+          <div *ngIf="errors.email" class="error-form">
+            <span>{{ errors.email }}</span>
+          </div>
+          <mat-form-field class="margin-top-20">
+            <mat-label>Hasło</mat-label>
+            <input
+              matInput
+              [type]="hide() ? 'password' : 'text'"
+              name="password"
+              [(ngModel)]="model.password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="clickEvent($event)"
+              type="button"
+              [attr.aria-label]="hide() ? 'Pokaż hasło' : 'Ukryj hasło'"
+              [attr.aria-pressed]="hide()"
+            >
+              <mat-icon>{{
+                hide() ? "visibility_off" : "visibility"
+              }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div *ngIf="errors.password" class="error-form">
+            <span>{{ errors.password }}</span>
+          </div>
+          <button
+            mat-raised-button
+            type="submit"
+            class="white-button margin-top-20"
+          >
+            Zaloguj się
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>

@@ -8,10 +8,19 @@ import { PublicModule } from './modules/public/public.module';
 import { MaterialModule } from './modules/material/material.module';
 import { LessonModule } from './modules/lesson/lesson.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
-  imports: [BrowserModule, AppRoutingModule, LessonModule, MaterialModule, PublicModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    LessonModule,
+    MaterialModule,
+    PublicModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
