@@ -1,1 +1,18 @@
-<p>navbar works!</p>
+<div id="navbar-container">
+    <div id="menu-buttons">
+      <button mat-button [matMenuTriggerFor]="menu" id="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button class="menu-button" mat-menu-item routerLink="/">Strona główna</button>
+        <button class="menu-button" mat-menu-item routerLink="/land">Wybór krainy</button>
+        <button class="menu-button" mat-menu-item routerLink="/login">Logowanie</button>
+        <button class="menu-button" mat-menu-item routerLink="/register">Rejestracja</button>
+      </mat-menu>
+    </div>
+    <div id="tab-buttons"></div>
+    <button class="tab-button" routerLink="/">Strona główna</button>
+    <button class="tab-button" routerLink="/land">Wybór krainy</button>
+    <button class="tab-button" routerLink="/login">Logowanie</button>
+    <button class="tab-button" routerLink="/register">Rejestracja</button>
+  </div>
