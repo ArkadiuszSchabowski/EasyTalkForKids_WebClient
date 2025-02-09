@@ -1,1 +1,11 @@
-<p>land works!</p>
+<div id="land-container" class="component-container">
+    <div id="cat-container" class="cloud-text">
+        Wybierz swoją krainę i zacznij zabawę! Mając konto, możesz kontynuować grę bez utraty postępów!
+    </div>
+    <div class="cat-image-with-cloud"></div>
+    <router-outlet></router-outlet>
+    <div id="button-container" class="margin-top-10">
+        <button mat-raised-button class="game-button" routerLink="/land/land-of-four-paws">Kraina czterech łapek</button>
+        <button mat-raised-button class="game-button" routerLink="/land/land-of-frozen-worlds">Kraina zamarzniętych słów</button>
+    </div>
+</div>

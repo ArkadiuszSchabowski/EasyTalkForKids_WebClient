@@ -21,15 +21,19 @@ button{
   width: 150px;
   height: 100%;
   font-size: 16px;
+  font-weight: bold;
   border: 0;
   background-color: mat.get-color-from-palette(theme.$accent);
 }
-.navbar-web-button:hover{
-  background-color: mat.get-color-from-palette(theme.$primary, 800) !important;
+.navbar-mobile-button{
+  width: 150px;
 }
 
-.navbar-mobile-button:hover{
-  background-color: mat.get-color-from-palette(theme.$primary, 800) !important;
+.navbar-web-button:hover, .navbar-mobile-button:hover{
+  font-size: 16px;
+  font-weight: bold;
+  color: mat.get-color-from-palette(theme.$accent) !important;
+  background-color: white !important;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
