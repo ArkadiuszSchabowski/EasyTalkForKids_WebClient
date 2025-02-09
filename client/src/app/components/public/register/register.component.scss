@@ -1,0 +1,20 @@
+@use "@angular/material" as mat;
+@use "src/styles" as theme;
+
+#register-container,
+#register-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-form {
+  flex-direction: column;
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+}
+
+@media screen and (min-width: 1200px) {
+}

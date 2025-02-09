@@ -19,7 +19,7 @@ export class LoginComponent {
 
   }
 
-  clickEvent(event: MouseEvent) {
+  clickPassword(event: MouseEvent) {
     this.hide.set(!this.hide());
     event.stopPropagation();
   }
