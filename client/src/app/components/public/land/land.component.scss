@@ -1,15 +1,24 @@
-button {
-  margin: 10px;
-}
-
-#land-container, #button-container {
+#land-container,
+#button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+#land-container {
+  width: calc(100% - 40px);
+}
+
+#cat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #button-container {
   justify-content: center;
+  width: 100%;
 }
 
 #land-container-description {
@@ -17,14 +26,50 @@ button {
   width: 250px;
 }
 
+.cloud-text {
+  width: 80%;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  #button-container {
+  #land-container {
     flex-direction: row;
+    width: calc(100% - 40px);
+  }
+  #cat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 50%;
+    height: 300px;
+  }
+  #button-container {
+    width: 50%;
+    justify-content: left;
+    align-items: baseline;
+  }
+  .cloud-text {
+    width: 70%;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  #button-container {
+  #land-container {
     flex-direction: row;
+    width: calc(100% - 40px);
+  }
+  #cat-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 300px;
+  }
+  #button-container {
+    width: calc(50%);
+    height: 300px;
+    justify-content: left;
+    align-items: baseline;
+  }
+  .cloud-text {
+    width: 60%;
   }
 }
