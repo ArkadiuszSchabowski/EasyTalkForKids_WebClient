@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { LandOfFourPawsComponent } from 'src/app/components/public/land-of-four-paws/land-of-four-paws.component';
 import { LandOfFrozenWorldsComponent } from 'src/app/components/public/land-of-frozen-worlds/land-of-frozen-worlds.component';
+import { LandOfCatTalesComponent } from 'src/app/components/public/land-of-cat-tales/land-of-cat-tales.component';
+import { LandOfSunnyDreamsComponent } from 'src/app/components/public/land-of-sunny-dreams/land-of-sunny-dreams.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,20 @@ import { LandOfFrozenWorldsComponent } from 'src/app/components/public/land-of-f
     LoginComponent,
     RegisterComponent,
     LandOfFourPawsComponent,
-    LandOfFrozenWorldsComponent
+    LandOfFrozenWorldsComponent,
+    LandOfSunnyDreamsComponent,
+    LandOfCatTalesComponent,
   ],
   imports: [CommonModule, AppRoutingModule, FormsModule, MaterialModule],
-  exports: [HomeComponent, LandComponent, LoginComponent, RegisterComponent, LandOfFourPawsComponent, LandOfFrozenWorldsComponent],
+  exports: [
+    HomeComponent,
+    LandComponent,
+    LoginComponent,
+    RegisterComponent,
+    LandOfFourPawsComponent,
+    LandOfFrozenWorldsComponent,
+    LandOfSunnyDreamsComponent,
+    LandOfCatTalesComponent,
+  ],
 })
 export class PublicModule {}

@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
-import { LandOfFourPawsService } from 'src/app/_services/land-of-four-paws.service';
 import { BaseLesson } from 'src/app/base/base-lesson';
 
 @Component({
-  selector: 'app-land-of-four-paws',
-  templateUrl: './land-of-four-paws.component.html',
-  styleUrls: ['./land-of-four-paws.component.scss'],
+  selector: 'app-land-of-sunny-dreams',
+  templateUrl: './land-of-sunny-dreams.component.html',
+  styleUrls: ['./land-of-sunny-dreams.component.scss'],
 })
-export class LandOfFourPawsComponent implements BaseLesson {
-  title: string = 'Kraina czterech łapek';
+export class LandOfSunnyDreamsComponent implements BaseLesson {
+  title: string = 'Kraina słonecznych marzeń';
 
-  constructor(private landOfFourPawsService: LandOfFourPawsService) {}
-
+  constructor() {}
   lesson1(): void {
-    this.landOfFourPawsService.lesson1();
-    console.log("lessson 1 - LandOfFourPaws")
+    console.log('lessson 1 - LandOfSunnyDreams');
   }
   lesson2(): void {
     throw new Error('Method not implemented.');

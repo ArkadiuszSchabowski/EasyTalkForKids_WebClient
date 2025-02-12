@@ -1,20 +1,14 @@
-import { Component } from '@angular/core';
-import { LandOfFourPawsService } from 'src/app/_services/land-of-four-paws.service';
-import { BaseLesson } from 'src/app/base/base-lesson';
+import { Injectable } from '@angular/core';
+import { BaseLesson } from '../base/base-lesson';
 
-@Component({
-  selector: 'app-land-of-four-paws',
-  templateUrl: './land-of-four-paws.component.html',
-  styleUrls: ['./land-of-four-paws.component.scss'],
+@Injectable({
+  providedIn: 'root',
 })
-export class LandOfFourPawsComponent implements BaseLesson {
-  title: string = 'Kraina czterech łapek';
-
-  constructor(private landOfFourPawsService: LandOfFourPawsService) {}
+export class LandOfCatTalesService implements BaseLesson {
+  constructor() {}
 
   lesson1(): void {
-    this.landOfFourPawsService.lesson1();
-    console.log("lessson 1 - LandOfFourPaws")
+    throw new Error('Method not implemented.');
   }
   lesson2(): void {
     throw new Error('Method not implemented.');
