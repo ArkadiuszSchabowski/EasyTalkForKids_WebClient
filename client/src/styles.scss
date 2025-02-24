@@ -69,6 +69,10 @@ input::-ms-clear {
   padding: 90px 20px 20px 20px;
 }
 
+.padding-5 {
+  padding: 5px;
+}
+
 .margin-top-10 {
   margin-top: 10px;
 }
@@ -102,14 +106,24 @@ input::-ms-clear {
   color: orangered;
 }
 
-.submit-button {
+.submit-white-button,
+.submit-blue-button {
+  width: 160px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.submit-white-button {
   color: mat.get-color-from-palette($accent) !important;
   background-color: white !important;
 }
 
-.game-button{
+.submit-blue-button {
+  color: white !important;
+  background-color: mat.get-color-from-palette($accent) !important;
+}
+
+.game-button {
   width: 300px;
   font-size: 18px;
   font-weight: bold;
@@ -117,9 +131,16 @@ input::-ms-clear {
   background-color: mat.get-color-from-palette($accent, 700) !important;
 }
 
-.game-button:hover{
+.game-button:hover {
   color: mat.get-color-from-palette($accent) !important;
   background-color: white !important;
+}
+
+.cat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cat-image-with-cloud{
@@ -131,7 +152,7 @@ input::-ms-clear {
   background-repeat: no-repeat;
 }
 
-.cloud-text{
+.cloud-text {
   width: auto;
   padding: 15px;
   border-radius: 25px;

@@ -10,11 +10,15 @@ import { LessonModule } from './modules/lesson/lesson.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     LessonModule,
     MaterialModule,
     PublicModule,

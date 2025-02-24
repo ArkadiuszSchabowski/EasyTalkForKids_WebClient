@@ -1,0 +1,87 @@
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+}
+
+#lesson-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#vocabulary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  align-items: center;
+}
+
+#image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bar-label{
+  font-size: 26px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+#button-container{
+    margin-top: 10px;
+}
+
+.cat-container {
+  margin-bottom: 20px;
+}
+
+.vocabulary-container-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  background-color: white;
+}
+
+.vocabulary-image{
+  display: flex;
+  width: 300px;
+  height: 300px;
+}
+
+#submit-button{
+  width: 160px !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  #lesson-container {
+    flex-direction: row;
+  }
+  .cat-container {
+    width: 30%;
+  }
+  .cloud-text {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #lesson-container {
+    flex-direction: row;
+  }
+  .cat-container {
+    width: 30%;
+  }
+  .cloud-text {
+    width: 70%;
+  }
+}

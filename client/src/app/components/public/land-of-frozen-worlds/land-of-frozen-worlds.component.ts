@@ -1,105 +1,83 @@
-import { Component } from '@angular/core';
-import { BaseLesson } from 'src/app/base/base-lesson';
-import { LessonContent } from 'src/app/models/lesson-content';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LandService } from 'src/app/_services/land.service';
+import { BaseLesson } from 'src/app/interfaces/base-lesson';
 
 @Component({
   selector: 'app-land-of-frozen-worlds',
   templateUrl: './land-of-frozen-worlds.component.html',
   styleUrls: ['./land-of-frozen-worlds.component.scss'],
 })
-export class LandOfFrozenWorldsComponent implements BaseLesson {
+export class LandOfFrozenWorldsComponent implements OnInit, BaseLesson {
   title: string = 'Kraina zamarzniętych słów';
+  landId: number = 0;
 
-  constructor() {}
-  lesson1(): void {
-    console.log('lessson 1 - LandOfFrozenWorlds');
-  }
-  lesson2(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson3(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson4(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson5(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson6(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson7(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson8(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson9(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson10(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson11(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson12(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson13(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson14(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson15(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson16(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson17(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson18(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson19(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson20(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson21(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson22(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson23(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson24(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson25(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson26(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson27(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson28(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson29(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson30(): void {
-    throw new Error('Method not implemented.');
+  constructor(private router: Router, private landService: LandService) {}
+
+  ngOnInit(): void {
+    this.getLand();
   }
 
+  getLand() {
+    this.landService.landSubject$.subscribe({
+      next: (response) => {
+        this.landId = response;
+      },
+      error: (error) => console.log(error),
+    });
+  }
+
+  lesson(lessonId: number): void {
+    switch (lessonId) {
+      case 31:
+      case 32:
+      case 33:
+      case 36:
+      case 37:
+      case 38:
+      case 41:
+      case 42:
+      case 43:
+      case 46:
+      case 47:
+      case 48:
+      case 51:
+      case 52:
+      case 53:
+      case 56:
+      case 57:
+      case 58:
+        this.router.navigateByUrl(`land/${this.landId}/vocabulary/${lessonId}`);
+        break;
+
+      case 34:
+      case 44:
+        this.router.navigateByUrl(`land/${this.landId}/theory/${lessonId}`);
+        break;
+
+      case 35:
+      case 45:
+        this.router.navigateByUrl(`land/${this.landId}/sentence/${lessonId}`);
+        break;
+
+      case 39:
+      case 40:
+      case 49:
+      case 50:
+      case 59:
+        this.router.navigateByUrl(`land/${this.landId}/dialogue/${lessonId}`);
+        break;
+
+      case 54:
+      case 55:
+        this.router.navigateByUrl(`land/${this.landId}/reading/${lessonId}`);
+        break;
+
+      case 60:
+        this.router.navigateByUrl(
+          `land/${this.landId}/vocabulary-review/${lessonId}`
+        );
+        break;
+    }
+  }
 }

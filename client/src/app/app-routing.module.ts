@@ -8,13 +8,12 @@ import { LandOfFourPawsComponent } from './components/public/land-of-four-paws/l
 import { LandOfFrozenWorldsComponent } from './components/public/land-of-frozen-worlds/land-of-frozen-worlds.component';
 import { LandOfCatTalesComponent } from './components/public/land-of-cat-tales/land-of-cat-tales.component';
 import { LandOfSunnyDreamsComponent } from './components/public/land-of-sunny-dreams/land-of-sunny-dreams.component';
-import { DialogueReviewComponent } from './components/lesson/dialogue-review/dialogue-review.component';
 import { DialogueComponent } from './components/lesson/dialogue/dialogue.component';
 import { SentenceComponent } from './components/lesson/sentence/sentence.component';
-import { SentenceReviewComponent } from './components/lesson/sentence-review/sentence-review.component';
 import { TheoryComponent } from './components/lesson/theory/theory.component';
 import { VocabularyComponent } from './components/lesson/vocabulary/vocabulary.component';
 import { VocabularyReviewComponent } from './components/lesson/vocabulary-review/vocabulary-review.component';
+import { ReadingComponent } from './components/lesson/reading/reading.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,13 +24,12 @@ const routes: Routes = [
   { path: 'land/4', component: LandOfSunnyDreamsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'dialogue', component: DialogueComponent },
-  { path: 'dialogue-review', component: DialogueReviewComponent },
-  { path: 'sentence', component: SentenceComponent },
-  { path: 'sentence-review', component: SentenceReviewComponent },
-  { path: 'theory', component: TheoryComponent },
-  { path: 'vocabulary', component: VocabularyComponent },
-  { path: 'vocabulary-review', component: VocabularyReviewComponent },
+  { path: 'land/:landId/dialogue/:lessonId', component: DialogueComponent },
+  { path: 'land/:landId/sentence/:lessonId', component: SentenceComponent },
+  { path: 'land/:landId/theory/:lessonId', component: TheoryComponent },
+  { path: 'land/:landId/vocabulary/:lessonId', component: VocabularyComponent },
+  { path: 'land/:landId/vocabulary-review/:lessonId', component: VocabularyReviewComponent },
+  {path: 'land/:landId/reading/:lessonId', component: ReadingComponent},
   { path: '**', component: HomeComponent },
 ];
 

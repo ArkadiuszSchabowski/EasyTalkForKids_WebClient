@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VocabularyComponent } from './vocabulary.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 describe('VocabularyComponent', () => {
   let component: VocabularyComponent;
@@ -8,7 +10,8 @@ describe('VocabularyComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [VocabularyComponent]
+      declarations: [VocabularyComponent],
+      imports: [AppRoutingModule, HttpClientModule]
     });
     fixture = TestBed.createComponent(VocabularyComponent);
     component = fixture.componentInstance;

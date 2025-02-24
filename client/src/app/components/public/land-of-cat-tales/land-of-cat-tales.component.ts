@@ -1,106 +1,84 @@
-import { Component } from '@angular/core';
-import { BaseLesson } from 'src/app/base/base-lesson';
-import { LessonContent } from 'src/app/models/lesson-content';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LandService } from 'src/app/_services/land.service';
+import { BaseLesson } from 'src/app/interfaces/base-lesson';
 
 @Component({
   selector: 'app-land-of-cat-tales',
   templateUrl: './land-of-cat-tales.component.html',
   styleUrls: ['./land-of-cat-tales.component.scss'],
 })
-export class LandOfCatTalesComponent implements BaseLesson {
+export class LandOfCatTalesComponent implements OnInit, BaseLesson {
   title: string = 'Kraina kocich opowieści';
+  landId: number = 0;
 
-  constructor() {
+  constructor(private router: Router, private landService: LandService) {}
 
+  ngOnInit(): void {
+    this.getLand();
   }
-  lesson1(): void {
-    console.log('lessson 1 - LandOfCatTales');
+
+  getLand() {
+    this.landService.landSubject$.subscribe({
+      next: (response) => {
+        this.landId = response;
+      },
+      error: (error) => console.log(error),
+    });
   }
-  lesson2(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson3(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson4(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson5(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson6(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson7(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson8(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson9(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson10(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson11(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson12(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson13(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson14(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson15(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson16(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson17(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson18(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson19(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson20(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson21(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson22(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson23(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson24(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson25(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson26(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson27(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson28(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson29(): void {
-    throw new Error('Method not implemented.');
-  }
-  lesson30(): void {
-    throw new Error('Method not implemented.');
+
+  lesson(lessonId: number): void {
+    switch (lessonId) {
+
+    // TO DO
+    //   case 1:
+    //   case 2:
+    //   case 3:
+    //   case 6:
+    //   case 7:
+    //   case 8:
+    //   case 11:
+    //   case 12:
+    //   case 13:
+    //   case 16:
+    //   case 17:
+    //   case 18:
+    //   case 21:
+    //   case 22:
+    //   case 23:
+    //   case 26:
+    //   case 27:
+    //   case 28:
+    //     this.router.navigateByUrl(
+    //       `land/${this.landId}/vocabulary/${lessonId}`
+    //     );
+    //     break;
+    //   case 4:
+    //   case 9:
+    //   case 14:
+    //   case 19:
+    //     this.router.navigateByUrl(`land/${this.landId}/theory/${lessonId}`);
+    //     break;
+    //   case 5:
+    //   case 10:
+    //   case 15:
+    //   case 20:
+    //     this.router.navigateByUrl(
+    //       `land/${this.landId}/sentence/${lessonId}`
+    //     );
+    //     break;
+    //   case 24:
+    //   case 29:
+    //     this.router.navigateByUrl(
+    //       `land/${this.landId}/vocabulary-review/${lessonId}`
+    //     );
+    //     break;
+    //   case 25:
+    //   case 30:
+    //     this.router.navigateByUrl(
+    //       `land/${this.landId}/sentence-review/${lessonId}`
+    //     );
+    //     break;
+    }
   }
 }
