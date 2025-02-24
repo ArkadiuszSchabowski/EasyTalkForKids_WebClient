@@ -68,12 +68,10 @@ input::-ms-clear {
   min-height: calc(100% - 110px);
   padding: 90px 20px 20px 20px;
 }
-<<<<<<< Updated upstream
-=======
+
 .padding-5 {
   padding: 5px;
 }
->>>>>>> Stashed changes
 
 .margin-top-10 {
   margin-top: 10px;
@@ -138,9 +136,6 @@ input::-ms-clear {
   background-color: white !important;
 }
 
-<<<<<<< Updated upstream
-.cat-image-with-cloud{
-=======
 .cat-container {
   display: flex;
   flex-direction: column;
@@ -148,8 +143,7 @@ input::-ms-clear {
   align-items: center;
 }
 
-.cat-image-with-cloud {
->>>>>>> Stashed changes
+.cat-image-with-cloud{
   width: 200px;
   height: 200px;
   background-image: url(../src/assets/cat-with-cloud.png);
