@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LandService } from 'src/app/_services/land.service';
+import { BaseLesson } from 'src/app/interfaces/base-lesson';
 import { WordDto } from 'src/app/models/word-dto';
 
 @Component({
@@ -8,7 +9,7 @@ import { WordDto } from 'src/app/models/word-dto';
   templateUrl: './land-of-four-paws.component.html',
   styleUrls: ['./land-of-four-paws.component.scss'],
 })
-export class LandOfFourPawsComponent implements OnInit {
+export class LandOfFourPawsComponent implements OnInit, BaseLesson {
   title: string = 'Kraina czterech łapek';
   words: WordDto[] = [];
   landId: number = 0;

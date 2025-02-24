@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LandService } from 'src/app/_services/land.service';
+import { BaseLesson } from 'src/app/interfaces/base-lesson';
 
 @Component({
   selector: 'app-land-of-sunny-dreams',
   templateUrl: './land-of-sunny-dreams.component.html',
   styleUrls: ['./land-of-sunny-dreams.component.scss'],
 })
-export class LandOfSunnyDreamsComponent implements OnInit {
+export class LandOfSunnyDreamsComponent implements OnInit, BaseLesson {
   title: string = 'Kraina słonecznych marzeń';
   landId: number = 0;
 

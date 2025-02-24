@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LandService } from 'src/app/_services/land.service';
+import { BaseLesson } from 'src/app/interfaces/base-lesson';
 
 @Component({
   selector: 'app-land-of-frozen-worlds',
   templateUrl: './land-of-frozen-worlds.component.html',
   styleUrls: ['./land-of-frozen-worlds.component.scss'],
 })
-export class LandOfFrozenWorldsComponent implements OnInit {
+export class LandOfFrozenWorldsComponent implements OnInit, BaseLesson {
   title: string = 'Kraina zamarzniętych słów';
   landId: number = 0;
 

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LandService } from 'src/app/_services/land.service';
+import { BaseLesson } from 'src/app/interfaces/base-lesson';
 
 @Component({
   selector: 'app-land-of-cat-tales',
   templateUrl: './land-of-cat-tales.component.html',
   styleUrls: ['./land-of-cat-tales.component.scss'],
 })
-export class LandOfCatTalesComponent implements OnInit {
+export class LandOfCatTalesComponent implements OnInit, BaseLesson {
   title: string = 'Kraina kocich opowieści';
   landId: number = 0;
 
