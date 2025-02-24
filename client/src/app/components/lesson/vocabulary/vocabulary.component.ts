@@ -10,7 +10,7 @@ import { LessonDto } from 'src/app/models/lesson-dto';
   styleUrls: ['./vocabulary.component.scss'],
 })
 export class VocabularyComponent implements OnInit {
-  lessonNumber!: number;
+  lessonId!: number;
   lessonContent: LessonDto = new LessonDto();
   isLessonStart: boolean = false;
   lessonProgress = 0;
@@ -25,14 +25,14 @@ export class VocabularyComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       const lessonIdParam = params.get('lessonId');
       if (lessonIdParam) {
-        this.lessonNumber = Number(lessonIdParam);
-        this.getLessonContent(this.lessonNumber);
+        this.lessonId = Number(lessonIdParam);
+        this.getLessonContent(this.lessonId);
       }
     });
   }
 
-  getLessonContent(lessonNumber: number) {
-    this.landService.lessonContent(lessonNumber).subscribe({
+  getLessonContent(lessonId: number) {
+    this.landService.lessonContent(lessonId).subscribe({
       next: (response: LessonDto) => {
         this.lessonContent = response;
         console.log(this.lessonContent)
