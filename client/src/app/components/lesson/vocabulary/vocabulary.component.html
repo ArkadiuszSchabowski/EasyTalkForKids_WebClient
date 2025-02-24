@@ -1,1 +1,58 @@
-<p>vocabulary works!</p>
+<div id="lesson-container" class="component-container">
+  <div class="cat-container">
+    <div id="cat-cloud" class="cloud-text padding-5" *ngIf="!isLessonStart">
+      {{
+        "Lekcja " +
+          lessonNumber +
+          ": Spróbuj nauczyć się słówek ze ściągi, następnie przejdź do lekcji! Powodzenia!"
+      }}
+    </div>
+    <div id="cat-cloud" class="cloud-text padding-5" *ngIf="isLessonStart">
+      {{ "Jak po angielsku nazywa się przedmiot wyświetlony na obrazku?" }}
+    </div>
+    <div class="cat-image-with-cloud"></div>
+  </div>
+  <div id="vocabulary-container">
+    <label id="bar-label">Postęp lekcji</label>
+    <mat-progress-bar mode="determinate" value="0" *ngIf="isLessonStart"
+      >Progres bar</mat-progress-bar
+    >
+    <div class="vocabulary-container-content" *ngIf="!isLessonStart">
+      <div class="vocabulary-content">
+        <div *ngFor="let content of lessonContent.wordsDto" class="padding-5">
+          {{ content.polishName }} - {{ content.englishName }}
+        </div>
+      </div>
+    </div>
+    <div id="button-container">
+      <button
+        mat-raised-button
+        class="game-button"
+        (click)="startLesson()"
+        *ngIf="!isLessonStart"
+      >
+        Przejdź do lekcji
+      </button>
+
+      <div id="start-lesson-container" *ngIf="isLessonStart">
+        <div id="image-container">
+          <img
+            [src]="
+              imageUrl + lessonContent.wordsDto[this.lessonProgress].imageUrl
+            "
+            class="vocabulary-image"
+          />
+        </div>
+        <div id="input-container">
+          <form #answerForm="ngForm" (ngSubmit)="userAnswer(answerForm)" autocomplete="off">
+            <mat-form-field class="margin-top-20">
+              <mat-label>Twoja odpowiedź:</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <button mat-raised-button type="submit" id="submit-button" class="game-button margin-top-20">OK</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
