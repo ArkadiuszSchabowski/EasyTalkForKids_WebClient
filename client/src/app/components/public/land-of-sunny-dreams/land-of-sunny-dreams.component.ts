@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LandService } from 'src/app/_services/_land.service';
+import { LandService } from 'src/app/_services/land.service';
 
 @Component({
   selector: 'app-land-of-sunny-dreams',
