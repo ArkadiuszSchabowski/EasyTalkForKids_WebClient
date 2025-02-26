@@ -8,8 +8,10 @@ import { DialogueComponent } from 'src/app/components/lesson/dialogue/dialogue.c
 import { ReadingComponent } from 'src/app/components/lesson/reading/reading.component';
 import { SentenceComponent } from 'src/app/components/lesson/sentence/sentence.component';
 import { TheoryComponent } from 'src/app/components/lesson/theory/theory.component';
-import { VocabularyReviewComponent } from 'src/app/components/lesson/vocabulary-review/vocabulary-review.component';
 import { VocabularyComponent } from 'src/app/components/lesson/vocabulary/vocabulary.component';
+import { ListeningComponent } from 'src/app/components/lesson/listening/listening.component';
+import { MemoryComponent } from 'src/app/components/lesson/memory/memory.component';
+import { ReviewComponent } from 'src/app/components/lesson/review/review.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { VocabularyComponent } from 'src/app/components/lesson/vocabulary/vocabu
     SentenceComponent,
     TheoryComponent,
     VocabularyComponent,
-    VocabularyReviewComponent,
+    ReviewComponent,
+    MemoryComponent,
+    ListeningComponent,
   ],
   imports: [CommonModule, FormsModule, MaterialModule],
   exports: [
@@ -27,7 +31,9 @@ import { VocabularyComponent } from 'src/app/components/lesson/vocabulary/vocabu
     SentenceComponent,
     TheoryComponent,
     VocabularyComponent,
-    VocabularyReviewComponent,
+    ReviewComponent,
+    MemoryComponent,
+    ListeningComponent,
   ],
 })
 export class LessonModule {}
