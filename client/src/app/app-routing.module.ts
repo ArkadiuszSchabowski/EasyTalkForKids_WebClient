@@ -12,8 +12,10 @@ import { DialogueComponent } from './components/lesson/dialogue/dialogue.compone
 import { SentenceComponent } from './components/lesson/sentence/sentence.component';
 import { TheoryComponent } from './components/lesson/theory/theory.component';
 import { VocabularyComponent } from './components/lesson/vocabulary/vocabulary.component';
-import { VocabularyReviewComponent } from './components/lesson/vocabulary-review/vocabulary-review.component';
 import { ReadingComponent } from './components/lesson/reading/reading.component';
+import { ListeningComponent } from './components/lesson/listening/listening.component';
+import { MemoryComponent } from './components/lesson/memory/memory.component';
+import { ReviewComponent } from './components/lesson/review/review.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,8 +30,10 @@ const routes: Routes = [
   { path: 'land/:landId/sentence/:lessonId', component: SentenceComponent },
   { path: 'land/:landId/theory/:lessonId', component: TheoryComponent },
   { path: 'land/:landId/vocabulary/:lessonId', component: VocabularyComponent },
-  { path: 'land/:landId/vocabulary-review/:lessonId', component: VocabularyReviewComponent },
   {path: 'land/:landId/reading/:lessonId', component: ReadingComponent},
+  {path: 'land/:landId/review/:lessonId', component: ReviewComponent},
+  {path: 'land/:landId/memory/:lessonId', component: MemoryComponent},
+  {path: 'land/:landId/listening/:lessonId', component: ListeningComponent},
   { path: '**', component: HomeComponent },
 ];
 
