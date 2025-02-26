@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LandService } from 'src/app/_services/land.service';
-import { BaseLesson } from 'src/app/interfaces/base-lesson';
+import { Lesson } from 'src/app/interfaces/lesson';
 
 @Component({
   selector: 'app-land-of-cat-tales',
   templateUrl: './land-of-cat-tales.component.html',
   styleUrls: ['./land-of-cat-tales.component.scss'],
 })
-export class LandOfCatTalesComponent implements OnInit, BaseLesson {
+export class LandOfCatTalesComponent implements OnInit, Lesson {
   title: string = 'Kraina kocich opowieści';
   landId: number = 0;
 
@@ -29,56 +29,52 @@ export class LandOfCatTalesComponent implements OnInit, BaseLesson {
 
   lesson(lessonId: number): void {
     switch (lessonId) {
-
-    // TO DO
-    //   case 1:
-    //   case 2:
-    //   case 3:
-    //   case 6:
-    //   case 7:
-    //   case 8:
-    //   case 11:
-    //   case 12:
-    //   case 13:
-    //   case 16:
-    //   case 17:
-    //   case 18:
-    //   case 21:
-    //   case 22:
-    //   case 23:
-    //   case 26:
-    //   case 27:
-    //   case 28:
-    //     this.router.navigateByUrl(
-    //       `land/${this.landId}/vocabulary/${lessonId}`
-    //     );
-    //     break;
-    //   case 4:
-    //   case 9:
-    //   case 14:
-    //   case 19:
-    //     this.router.navigateByUrl(`land/${this.landId}/theory/${lessonId}`);
-    //     break;
-    //   case 5:
-    //   case 10:
-    //   case 15:
-    //   case 20:
-    //     this.router.navigateByUrl(
-    //       `land/${this.landId}/sentence/${lessonId}`
-    //     );
-    //     break;
-    //   case 24:
-    //   case 29:
-    //     this.router.navigateByUrl(
-    //       `land/${this.landId}/vocabulary-review/${lessonId}`
-    //     );
-    //     break;
-    //   case 25:
-    //   case 30:
-    //     this.router.navigateByUrl(
-    //       `land/${this.landId}/sentence-review/${lessonId}`
-    //     );
-    //     break;
+      case 61:
+      case 62:
+      case 66:
+      case 67:
+      case 73:
+      case 74:
+      case 76:
+      case 77:
+      case 85:
+      case 86:
+        this.router.navigateByUrl(`land/${this.landId}/vocabulary/${lessonId}`);
+        break;
+      case 63:
+      case 71:
+      case 78:
+      case 83:
+        this.router.navigateByUrl(`land/${this.landId}/theory/${lessonId}`);
+        break;
+      case 64:
+      case 72:
+      case 79:
+      case 84:
+        this.router.navigateByUrl(`land/${this.landId}/sentence/${lessonId}`);
+        break;
+      case 65:
+      case 70:
+      case 75:
+        this.router.navigateByUrl(`land/${this.landId}/memory/${lessonId}`);
+        break;
+      case 68:
+      case 69:
+        this.router.navigateByUrl(`land/${this.landId}/dialogue/${lessonId}`);
+        break;
+      case 80:
+      case 81:
+      case 87:
+        this.router.navigateByUrl(`land/${this.landId}/reading/${lessonId}`);
+        break;
+      case 82:
+      case 88:
+        this.router.navigateByUrl(`land/${this.landId}/listening/${lessonId}`);
+        break;
+      case 89:
+      case 90:
+        this.router.navigateByUrl(`land/${this.landId}/review/${lessonId}`);
+        break;
     }
   }
 }

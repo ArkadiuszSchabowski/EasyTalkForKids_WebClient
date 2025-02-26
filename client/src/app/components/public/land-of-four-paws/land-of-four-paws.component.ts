@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LandService } from 'src/app/_services/land.service';
-import { BaseLesson } from 'src/app/interfaces/base-lesson';
+import { Lesson } from 'src/app/interfaces/lesson';
 import { WordDto } from 'src/app/models/word-dto';
 
 @Component({
@@ -9,7 +9,7 @@ import { WordDto } from 'src/app/models/word-dto';
   templateUrl: './land-of-four-paws.component.html',
   styleUrls: ['./land-of-four-paws.component.scss'],
 })
-export class LandOfFourPawsComponent implements OnInit, BaseLesson {
+export class LandOfFourPawsComponent implements OnInit, Lesson {
   title: string = 'Kraina czterech łapek';
   words: WordDto[] = [];
   landId: number = 0;
@@ -33,43 +33,49 @@ export class LandOfFourPawsComponent implements OnInit, BaseLesson {
     switch (lessonId) {
       case 1:
       case 2:
-      case 3:
       case 6:
       case 7:
-      case 8:
-      case 11:
-      case 12:
       case 13:
+      case 14:
       case 16:
       case 17:
-      case 18:
-      case 21:
-      case 22:
-      case 23:
+      case 25:
       case 26:
-      case 27:
-      case 28:
         this.router.navigateByUrl(`land/${this.landId}/vocabulary/${lessonId}`);
         break;
-      case 4:
-      case 9:
-      case 14:
-      case 19:
+      case 3:
+      case 11:
+      case 18:
+      case 23:
         this.router.navigateByUrl(`land/${this.landId}/theory/${lessonId}`);
+        break;
+      case 4:
+      case 12:
+      case 19:
+      case 24:
+        this.router.navigateByUrl(`land/${this.landId}/sentence/${lessonId}`);
         break;
       case 5:
       case 10:
       case 15:
-      case 20:
-      case 25:
-      case 30:
-        this.router.navigateByUrl(`land/${this.landId}/sentence/${lessonId}`);
+        this.router.navigateByUrl(`land/${this.landId}/memory/${lessonId}`);
         break;
-      case 24:
+      case 8:
+      case 9:
+        this.router.navigateByUrl(`land/${this.landId}/dialogue/${lessonId}`);
+        break;
+      case 20:
+      case 21:
+      case 27:
+        this.router.navigateByUrl(`land/${this.landId}/reading/${lessonId}`);
+        break;
+      case 22:
+      case 28:
+        this.router.navigateByUrl(`land/${this.landId}/listening/${lessonId}`);
+        break;
       case 29:
-        this.router.navigateByUrl(
-          `land/${this.landId}/vocabulary-review/${lessonId}`
-        );
+      case 30:
+        this.router.navigateByUrl(`land/${this.landId}/review/${lessonId}`);
         break;
     }
   }
