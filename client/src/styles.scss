@@ -46,7 +46,7 @@ mat-label {
   background-color: mat.get-color-from-palette($accent) !important;
 }
 
-::ng-deep mat-form-field {
+mat-form-field {
   width: 100%;
 }
 
@@ -67,6 +67,13 @@ input::-ms-clear {
   min-width: 400px;
   min-height: calc(100% - 110px);
   padding: 90px 20px 20px 20px;
+}
+
+.auth-container {
+  min-width: 400px;
+  min-height: calc(100% - 90px);
+  padding: 70px 0 20px 0;
+  background-color: white;
 }
 
 .padding-5 {
@@ -108,9 +115,9 @@ input::-ms-clear {
 
 .submit-white-button,
 .submit-blue-button {
-  width: 160px;
   font-size: 18px;
   font-weight: bold;
+  width: 200px;
 }
 
 .submit-white-button {
@@ -168,10 +175,19 @@ input::-ms-clear {
     min-height: calc(100% - 130px);
     padding-top: 110px;
   }
+  .auth-container {
+    min-height: calc(100% - 110px);
+    padding-top: 90px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .component-container {
     min-height: calc(100% - 130px);
-    padding-top: 110px;
+    padding-top: 90px;
+  }
+  .auth-container {
+    min-height: calc(100% - 110px);
+    padding-top: 90px;
+    margin-bottom: 0;
   }
 }
