@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { LoginDto } from 'src/app/models/login';
-import { LoginErrorDto } from 'src/app/models/login-error';
+import { LoginDto } from 'src/app/models/login-dto';
+import { LoginErrorDto } from 'src/app/models/login-error-dto';
 
 @Component({
   selector: 'app-login',
