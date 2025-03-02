@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { LandService } from 'src/app/_services/land.service';
-import { LessonDto } from 'src/app/models/lesson-dto';
+import { GetLessonDto } from 'src/app/models/get-lesson-dto';
 
 @Component({
   selector: 'app-vocabulary',
@@ -10,8 +10,9 @@ import { LessonDto } from 'src/app/models/lesson-dto';
   styleUrls: ['./vocabulary.component.scss'],
 })
 export class VocabularyComponent implements OnInit {
+
   lessonId!: number;
-  lessonContent: LessonDto = new LessonDto();
+  lessonContent: GetLessonDto = new GetLessonDto();
   isLessonStart: boolean = false;
   lessonProgress = 0;
   imageUrl = 'http://localhost:5000/';
@@ -26,14 +27,14 @@ export class VocabularyComponent implements OnInit {
       const lessonIdParam = params.get('lessonId');
       if (lessonIdParam) {
         this.lessonId = Number(lessonIdParam);
-        this.getLessonContent(this.lessonId);
+        this.getLesson(this.lessonId);
       }
     });
   }
 
-  getLessonContent(lessonId: number) {
-    this.landService.lessonContent(lessonId).subscribe({
-      next: (response: LessonDto) => {
+  getLesson(lessonId: number) {
+    this.landService.getLesson(lessonId).subscribe({
+      next: (response: GetLessonDto) => {
         this.lessonContent = response;
         console.log(this.lessonContent)
       },

@@ -1,4 +1,5 @@
 export class SearchDto{
     type: string = '';
-    value: string = '';
+    searchBy: string = '';
+    searchValue: string = ''
 }

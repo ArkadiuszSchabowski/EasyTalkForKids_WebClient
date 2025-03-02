@@ -1,3 +1,6 @@
+@use '@angular/material' as mat;
+@use 'src/styles' as theme;
+
 :host ::ng-deep mat-card{
   border-radius: 0 !important;
   width: 100%;
@@ -27,6 +30,7 @@ button{
 #moderator-container{
   display: flex;
   flex-direction: column;
+  background-color: mat.get-color-from-palette(theme.$primary) !important;
 }
 #moderator-search-container{
   display: flex;
@@ -47,14 +51,8 @@ form{
   align-items: center;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  mat-card{
-    min-height: 110px;
-  }
-  mat-card-content{
-    flex-direction: row;
-  }
-}
+@media screen and (min-width: 768px) and (max-width: 1199px) {}
+
 @media screen and (min-width: 1200px) {
   mat-card{
     min-height: 110px;
