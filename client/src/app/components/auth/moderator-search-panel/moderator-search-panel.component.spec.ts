@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModeratorPanelComponent } from './moderator-panel.component';
+import { ModeratorSearchPanelComponent } from './moderator-search-panel.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/modules/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('ModeratorPanelComponent', () => {
-  let component: ModeratorPanelComponent;
-  let fixture: ComponentFixture<ModeratorPanelComponent>;
+  let component: ModeratorSearchPanelComponent;
+  let fixture: ComponentFixture<ModeratorSearchPanelComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ModeratorPanelComponent],
+      declarations: [ModeratorSearchPanelComponent],
       imports: [BrowserAnimationsModule, FormsModule, HttpClientModule, MaterialModule]
     });
-    fixture = TestBed.createComponent(ModeratorPanelComponent);
+    fixture = TestBed.createComponent(ModeratorSearchPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

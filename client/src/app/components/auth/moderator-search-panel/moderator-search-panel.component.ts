@@ -11,10 +11,10 @@ import { SearchErrorDto } from 'src/app/models/search-error-dto';
 
 @Component({
   selector: 'app-moderator-panel',
-  templateUrl: './moderator-panel.component.html',
-  styleUrls: ['./moderator-panel.component.scss'],
+  templateUrl: './moderator-search-panel.component.html',
+  styleUrls: ['./moderator-search-panel.component.scss'],
 })
-export class ModeratorPanelComponent {
+export class ModeratorSearchPanelComponent {
 
   model: SearchDto = new SearchDto();
   errors: SearchErrorDto = new SearchErrorDto();

@@ -16,7 +16,7 @@ import { ReadingComponent } from './components/lesson/reading/reading.component'
 import { ListeningComponent } from './components/lesson/listening/listening.component';
 import { MemoryComponent } from './components/lesson/memory/memory.component';
 import { ReviewComponent } from './components/lesson/review/review.component';
-import { ModeratorPanelComponent } from './components/auth/moderator-panel/moderator-panel.component';
+import { ModeratorSearchPanelComponent } from './components/auth/moderator-search-panel/moderator-search-panel.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'land/4', component: LandOfSunnyDreamsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'moderator-panel', component: ModeratorPanelComponent},
+  { path: 'moderator-search-panel', component: ModeratorSearchPanelComponent},
   { path: 'land/:landId/dialogue/:lessonId', component: DialogueComponent },
   { path: 'land/:landId/sentence/:lessonId', component: SentenceComponent },
   { path: 'land/:landId/theory/:lessonId', component: TheoryComponent },
