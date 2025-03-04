@@ -1,4 +1,4 @@
-<div id="register-container" class="component-container">
+<div id="register-container" class="component-container" [ngClass]="{'moderator-panel-margin': authService.moderatorPanelSubject$ | async}">
     <form
       #registerForm="ngForm"
       autocomplete="off"

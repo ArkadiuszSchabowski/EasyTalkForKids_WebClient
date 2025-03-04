@@ -1,4 +1,4 @@
-<div id="land-container" class="component-container">
+<div id="land-container" class="component-container" [ngClass]="{'moderator-panel-margin': authService.moderatorPanelSubject$ | async}">
   <p>{{ title }}</p>
 
   <button mat-raised-button class="game-button" (click)="lesson(1)">

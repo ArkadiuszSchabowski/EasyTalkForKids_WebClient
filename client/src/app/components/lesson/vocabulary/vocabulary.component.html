@@ -1,4 +1,4 @@
-<div id="lesson-container" class="component-container">
+<div id="lesson-container" class="component-container" [ngClass]="{'moderator-panel-margin': authService.moderatorPanelSubject$ | async}">
   <div class="cat-container">
     <div id="cat-cloud" class="cloud-text padding-5" *ngIf="!isLessonStart">
       {{

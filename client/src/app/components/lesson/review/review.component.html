@@ -1,3 +1,9 @@
-<div id="vocabulary-container" class="component-container">
-    <p>review works!</p>
+<div
+  id="vocabulary-container"
+  class="component-container"
+  [ngClass]="{
+    'moderator-panel-margin': authService.moderatorPanelSubject$ | async
+  }"
+>
+  <p>review works!</p>
 </div>

@@ -1,4 +1,10 @@
-<div id="moderator-container" class="auth-container">
+<div
+  id="moderator-container"
+  class="auth-container"
+  [ngClass]="{
+    'moderator-panel-margin': (authService.moderatorPanelSubject$ | async)
+  }"
+>
   <div id="moderator-search-container">
     <form
       #searchForm="ngForm"
