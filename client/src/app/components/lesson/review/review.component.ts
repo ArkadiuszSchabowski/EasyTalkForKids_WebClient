@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-review',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./review.component.scss']
 })
 export class ReviewComponent {
-
+  constructor(public authService: AuthService){
+    
+  }
 }

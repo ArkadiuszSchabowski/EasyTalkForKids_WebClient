@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-memory',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./memory.component.scss']
 })
 export class MemoryComponent {
-
+  constructor(public authService: AuthService){
+    
+  }
 }

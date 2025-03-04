@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 import { LandService } from 'src/app/_services/land.service';
 import { GetLessonDto } from 'src/app/models/get-lesson-dto';
 
@@ -19,7 +20,8 @@ export class VocabularyComponent implements OnInit {
 
   constructor(
     private landService: LandService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {

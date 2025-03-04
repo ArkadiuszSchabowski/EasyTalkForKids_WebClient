@@ -1,4 +1,10 @@
-<div id="moderator-container" class="auth-container">
+<div
+  id="moderator-container"
+  class="auth-container"
+  [ngClass]="{
+    'moderator-panel-margin': (authService.moderatorPanelSubject$ | async)
+  }"
+>
   <div id="moderator-search-container">
     <form
       #searchForm="ngForm"
@@ -9,7 +15,11 @@
         <mat-card-content>
           <mat-form-field class="search-item">
             <mat-label>Typ wyszukiwania</mat-label>
-            <mat-select name="type" [(ngModel)]="model.type" (ngModelChange)="onTypeChange($event)">
+            <mat-select
+              name="type"
+              [(ngModel)]="model.type"
+              (ngModelChange)="onTypeChange($event)"
+            >
               <mat-option *ngFor="let type of types" [value]="type.value">
                 {{ type.viewValue }}
               </mat-option>
@@ -18,7 +28,11 @@
 
           <mat-form-field class="search-item">
             <mat-label>Szukaj według</mat-label>
-            <mat-select name="searchBy" [(ngModel)]="model.searchBy" [disabled]="!model.type">
+            <mat-select
+              name="searchBy"
+              [(ngModel)]="model.searchBy"
+              [disabled]="!model.type"
+            >
               <mat-option *ngFor="let result of results" [value]="result.value">
                 {{ result.viewValue }}
               </mat-option>
@@ -27,14 +41,19 @@
 
           <mat-form-field class="search-item">
             <mat-label>Szukana wartość</mat-label>
-            <input matInput name="searchValue" [(ngModel)]="model.searchValue" [disabled]="!model.searchBy"/>
+            <input
+              matInput
+              name="searchValue"
+              [(ngModel)]="model.searchValue"
+              [disabled]="!model.searchBy"
+            />
           </mat-form-field>
 
           <button mat-raised-button type="submit" class="submit-white-button">
             Pokaż wyniki
           </button>
         </mat-card-content>
-        
+
         <div *ngIf="errors.type" class="error-form">
           <span>{{ errors.type }}</span>
         </div>

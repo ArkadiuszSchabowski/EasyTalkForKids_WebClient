@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/_services/auth.service';
 import { RegisterDto } from 'src/app/models/register';
 import { RegisterErrorDto } from 'src/app/models/register-error';
 
@@ -16,7 +17,9 @@ export class RegisterComponent {
   model: RegisterDto = new RegisterDto();
   errors: RegisterErrorDto = new RegisterErrorDto();
 
-  constructor(private toastr: ToastrService) {}
+  constructor(private toastr: ToastrService,
+    public authService: AuthService
+  ) {}
 
   clickPassword(event: MouseEvent) {
     this.hidePassword.set(!this.hidePassword());

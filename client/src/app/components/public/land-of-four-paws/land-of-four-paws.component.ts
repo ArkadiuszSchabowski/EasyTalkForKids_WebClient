@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/_services/auth.service';
 import { LandService } from 'src/app/_services/land.service';
 import { Lesson } from 'src/app/interfaces/lesson';
 import { WordDto } from 'src/app/models/word-dto';
@@ -14,7 +15,7 @@ export class LandOfFourPawsComponent implements OnInit, Lesson {
   words: WordDto[] = [];
   landId: number = 0;
 
-  constructor(private router: Router, private landService: LandService) {}
+  constructor(private router: Router, private landService: LandService, public authService: AuthService) {}
 
   ngOnInit(): void {
     this.getLand();

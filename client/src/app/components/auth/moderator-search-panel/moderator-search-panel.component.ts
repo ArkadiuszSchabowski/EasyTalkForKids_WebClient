@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/_services/auth.service';
 import { LandService } from 'src/app/_services/land.service';
 import { GetCategoryDto } from 'src/app/models/get-category-dto';
 import { GetLessonDto } from 'src/app/models/get-lesson-dto';
@@ -32,10 +33,12 @@ export class ModeratorSearchPanelComponent {
   ];
 
   results: any[] = [];
+  isModeratorPanel = false;
 
-  constructor(private landService :LandService){
-
-  }
+  constructor(
+    private landService: LandService,
+    public authService: AuthService
+  ) {}
 
   onTypeChange(selectedType: string) {
     this.results = [];
@@ -44,7 +47,7 @@ export class ModeratorSearchPanelComponent {
       case 'lesson':
         this.results = [
           { value: 'id', viewValue: 'Id' },
-          { value: 'name', viewValue: 'Nazwa' }
+          { value: 'name', viewValue: 'Nazwa' },
         ];
         break;
       case 'category':
@@ -76,49 +79,49 @@ export class ModeratorSearchPanelComponent {
       return;
     }
 
-    if(!this.model.searchBy){
-      this.errors.type = 'Proszę wybrać po czym należy szukać!'
+    if (!this.model.searchBy) {
+      this.errors.type = 'Proszę wybrać po czym należy szukać!';
       return;
     }
 
-    if(!this.model.searchValue){
-      switch(this.model.type){
+    if (!this.model.searchValue) {
+      switch (this.model.type) {
         case 'lesson':
           this.landService.getLessons().subscribe({
-            next: response => {
-              this.lessons = response
-              console.log(response)
+            next: (response) => {
+              this.lessons = response;
+              console.log(response);
             },
-            error: (error) => console.log(error)
-          })
-        break;
+            error: (error) => console.log(error),
+          });
+          break;
         case 'category':
           this.landService.getCategories().subscribe({
-            next: response => {
-              this.categories = response
-              console.log(response)
+            next: (response) => {
+              this.categories = response;
+              console.log(response);
             },
-            error: (error) => console.log(error)
-          })
-        break;
+            error: (error) => console.log(error),
+          });
+          break;
         case 'topic':
           this.landService.getTopics().subscribe({
-            next: response => {
-              this.topics = response
-              console.log(response)
+            next: (response) => {
+              this.topics = response;
+              console.log(response);
             },
-            error: (error) => console.log(error)
-          })
-        break;
+            error: (error) => console.log(error),
+          });
+          break;
         case 'word':
           this.landService.getWords().subscribe({
-            next: response => {
-              this.words = response
-              console.log(response)
+            next: (response) => {
+              this.words = response;
+              console.log(response);
             },
-            error: (error) => console.log(error)
-          })
-        break;
+            error: (error) => console.log(error),
+          });
+          break;
       }
     }
   }

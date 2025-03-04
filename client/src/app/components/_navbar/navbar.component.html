@@ -16,8 +16,8 @@
       <button class="navbar-mobile-button" mat-menu-item routerLink="/register">
         Rejestracja
       </button>
-      <button class="navbar-mobile-button" mat-menu-item routerLink="/moderator-search-panel">
-        Wyszukiwarka
+      <button class="navbar-mobile-button" mat-menu-item (click)="setAuthPanelState()">
+        Panel moderatora
       </button>
     </mat-menu>
   </div>
@@ -26,5 +26,5 @@
   <button class="navbar-web-button" routerLink="/land">Wybór krainy</button>
   <button class="navbar-web-button" routerLink="/login">Logowanie</button>
   <button class="navbar-web-button" routerLink="/register">Rejestracja</button>
-  <button class="navbar-web-button" routerLink="/moderator-search-panel">Wyszukiwarka</button>
+  <button class="navbar-web-button" (click)="setAuthPanelState()">Panel moderatora</button>
 </div>

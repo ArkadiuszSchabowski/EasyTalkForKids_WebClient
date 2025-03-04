@@ -6,16 +6,36 @@ app-navbar {
     min-height: 70px;
     z-index: 100;
   }
+
+  app-navbar-moderator{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 50px;
+    min-height: 50px;
+    z-index: 100;
+    margin-top: 70px;
+  }
   
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     app-navbar {
       height: 90px;
       min-height: 90px;
     }
+    app-navbar-moderator{
+      height: 50px;
+      min-height: 50px;
+      margin-top: 90px;
+    }
   }
   @media screen and (min-width: 1200px) {
     app-navbar {
       height: 90px;
       min-height: 90px;
+    }
+    app-navbar-moderator{
+      height: 50px;
+      min-height: 50px;
+      margin-top: 90px;
     }
   }

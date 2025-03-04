@@ -1,3 +1,9 @@
-<div id="memory-container" class="component-container">
-    <p>memory works!</p>
+<div
+  id="memory-container"
+  class="component-container"
+  [ngClass]="{
+    'moderator-panel-margin': authService.moderatorPanelSubject$ | async
+  }"
+>
+  <p>memory works!</p>
 </div>

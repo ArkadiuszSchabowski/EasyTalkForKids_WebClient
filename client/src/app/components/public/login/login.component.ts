@@ -1,23 +1,21 @@
 import { Component, signal } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/_services/auth.service';
 import { LoginDto } from 'src/app/models/login-dto';
 import { LoginErrorDto } from 'src/app/models/login-error-dto';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-
   hide = signal(true);
   model: LoginDto = new LoginDto();
   errors: LoginErrorDto = new LoginErrorDto();
 
-  constructor(private toastr: ToastrService){
-
-  }
+  constructor(private toastr: ToastrService, public authService: AuthService) {}
 
   clickPassword(event: MouseEvent) {
     this.hide.set(!this.hide());
@@ -29,7 +27,6 @@ export class LoginComponent {
 
     if (!this.model.email) {
       this.errors.email = 'E-mail jest wymagany!';
-
     } else if (!this.isValidEmail(this.model.email)) {
       this.errors.email = 'Niepoprawny format e-maila!';
     }
@@ -41,7 +38,7 @@ export class LoginComponent {
     if (this.errors.email || this.errors.password) {
       return;
     }
-    
+
     loginForm.resetForm();
 
     //TODO - Api Call

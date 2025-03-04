@@ -1,4 +1,4 @@
-<div id="login-container" class="component-container">
+<div id="login-container" class="component-container" [ngClass]="{'moderator-panel-margin': authService.moderatorPanelSubject$ | async}">
   <form #loginForm="ngForm" (ngSubmit)="tryLogin(loginForm)" autocomplete="off">
     <mat-card>
       <mat-card-content>
