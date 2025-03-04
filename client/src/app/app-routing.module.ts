@@ -17,6 +17,8 @@ import { ListeningComponent } from './components/lesson/listening/listening.comp
 import { MemoryComponent } from './components/lesson/memory/memory.component';
 import { ReviewComponent } from './components/lesson/review/review.component';
 import { ModeratorSearchPanelComponent } from './components/auth/moderator-search-panel/moderator-search-panel.component';
+import { ModeratorAddPanelComponent } from './components/auth/moderator-add-panel/moderator-add-panel.component';
+import { ModeratorRemovePanelComponent } from './components/auth/moderator-remove-panel/moderator-remove-panel.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +30,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'moderator-search-panel', component: ModeratorSearchPanelComponent},
+  { path: 'moderator-add-panel', component: ModeratorAddPanelComponent},
+  { path: 'moderator-remove-panel', component: ModeratorRemovePanelComponent},
   { path: 'land/:landId/dialogue/:lessonId', component: DialogueComponent },
   { path: 'land/:landId/sentence/:lessonId', component: SentenceComponent },
   { path: 'land/:landId/theory/:lessonId', component: TheoryComponent },
