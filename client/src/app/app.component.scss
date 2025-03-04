@@ -1,41 +1,72 @@
-app-navbar {
-    position: fixed;
-    display: flex;
-    width: 100vw;
-    height: 70px;
-    min-height: 70px;
-    z-index: 100;
-  }
+@use "@angular/material" as mat;
+@use "src/styles" as theme;
 
-  app-navbar-moderator{
-    position: fixed;
-    display: flex;
-    width: 100vw;
+app-navbar {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 70px;
+  min-height: 70px;
+  z-index: 100;
+}
+
+button {
+  color: white !important;
+}
+
+#container-navbar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+  margin-top: 70px;
+  padding-left: 0;
+  background-color: mat.get-color-from-palette(theme.$accent, 700);
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  z-index: 100;
+}
+
+.navbar-web-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0;
+  background-color: mat.get-color-from-palette(theme.$accent);
+}
+
+.navbar-web-button:hover {
+  font-size: 16px;
+  font-weight: bold;
+  color: mat.get-color-from-palette(theme.$accent) !important;
+  background-color: white !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  app-navbar {
+    height: 90px;
+    min-height: 90px;
+  }
+  #container-navbar {
     height: 50px;
     min-height: 50px;
-    z-index: 100;
-    margin-top: 70px;
+    margin-top: 90px;
   }
-  
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    app-navbar {
-      height: 90px;
-      min-height: 90px;
-    }
-    app-navbar-moderator{
-      height: 50px;
-      min-height: 50px;
-      margin-top: 90px;
-    }
+}
+@media screen and (min-width: 1200px) {
+  app-navbar {
+    height: 90px;
+    min-height: 90px;
   }
-  @media screen and (min-width: 1200px) {
-    app-navbar {
-      height: 90px;
-      min-height: 90px;
-    }
-    app-navbar-moderator{
-      height: 50px;
-      min-height: 50px;
-      margin-top: 90px;
-    }
+  #container-navbar {
+    height: 50px;
+    min-height: 50px;
+    margin-top: 90px;
   }
+}

@@ -1,3 +1,13 @@
 <app-navbar></app-navbar>
-<app-navbar-moderator *ngIf="isModeratorPanel"></app-navbar-moderator>
+<div id="container-navbar" *ngIf="authService.moderatorPanelSubject$ | async">
+  <button class="navbar-web-button" routerLink="/moderator-search-panel">
+    Wyszukaj
+  </button>
+  <button class="navbar-web-button" routerLink="/moderator-add-panel">
+    Dodaj
+  </button>
+  <button class="navbar-web-button" routerLink="/moderator-remove-panel">
+    Usuń
+  </button>
+</div>
 <router-outlet></router-outlet>

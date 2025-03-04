@@ -6,25 +6,9 @@ import { AuthService } from './_services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  isModeratorPanel = false;
-
-  constructor(private authService: AuthService){
+  constructor(public authService: AuthService){
 
   }
-
-  ngOnInit(): void {
-    this.checkAuthPanel();
-  }
-
-  checkAuthPanel() {
-    this.authService.moderatorPanelSubject$.subscribe({
-      next: response => {
-        this.isModeratorPanel = response
-      },
-      error: error => console.log(error)
-    })
-  }
-
 }

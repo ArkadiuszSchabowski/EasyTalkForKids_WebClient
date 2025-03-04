@@ -11,13 +11,12 @@ import { LessonModule } from './modules/lesson/lesson.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarModeratorComponent } from './components/auth/navbar-moderator/navbar-moderator.component';
 import { ModeratorAddPanelComponent } from './components/auth/moderator-add-panel/moderator-add-panel.component';
 import { ModeratorRemovePanelComponent } from './components/auth/moderator-remove-panel/moderator-remove-panel.component';
 
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, NavbarModeratorComponent, ModeratorAddPanelComponent, ModeratorRemovePanelComponent],
+  declarations: [AppComponent, NavbarComponent, ModeratorAddPanelComponent, ModeratorRemovePanelComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
