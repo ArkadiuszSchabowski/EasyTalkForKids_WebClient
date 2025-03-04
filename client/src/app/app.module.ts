@@ -11,12 +11,9 @@ import { LessonModule } from './modules/lesson/lesson.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
-import { ModeratorAddPanelComponent } from './components/auth/moderator-add-panel/moderator-add-panel.component';
-import { ModeratorRemovePanelComponent } from './components/auth/moderator-remove-panel/moderator-remove-panel.component';
-
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, ModeratorAddPanelComponent, ModeratorRemovePanelComponent],
+  declarations: [AppComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
