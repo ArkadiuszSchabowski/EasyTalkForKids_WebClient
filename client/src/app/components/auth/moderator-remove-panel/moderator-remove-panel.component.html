@@ -1,7 +1,24 @@
 <div
   id="remove-container"
   class="component-container"
-  [ngClass]="{ 'moderator-panel-margin': (authService.moderatorPanelSubject$ | async)}"
+  [ngClass]="{
+    'moderator-panel-margin': (authService.moderatorPanelSubject$ | async)
+  }"
 >
-  <p>remove container works!</p>
+  <div id="lesson-container" class="remove-subcontainer">
+    <img src="../../../../assets/book.png" class="photo-subcontainer"/>
+    <button mat-raised-button class="game-button">Usuń Lekcje</button>
+  </div>
+  <div id="category-container" class="remove-subcontainer">
+    <img src="../../../../assets/category.png" class="photo-subcontainer"/>
+    <button mat-raised-button class="game-button">Usuń Kategorie</button>
+  </div>
+  <div id="topic-container" class="remove-subcontainer">
+    <img src="../../../../assets/topic.png" class="photo-subcontainer" />
+    <button mat-raised-button class="game-button">Usuń Temat</button>
+  </div>
+  <div id="word-container" class="remove-subcontainer">
+    <img src="../../../../assets/word.png" class="photo-subcontainer"/>
+    <button mat-raised-button class="game-button">Usuń Słowo</button>
+  </div>
 </div>

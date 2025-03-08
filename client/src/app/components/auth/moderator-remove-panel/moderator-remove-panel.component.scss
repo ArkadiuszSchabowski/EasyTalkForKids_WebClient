@@ -1,0 +1,47 @@
+#remove-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 40px);
+    height: calc(100% - 3000px);
+  }
+  
+  .remove-subcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+  
+  .photo-subcontainer {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+  .game-button{
+      width: 175px;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+      #remove-container {
+          flex-direction: row;
+          justify-content: center;
+          min-width: 800px;
+        }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    #remove-container {
+      flex-direction: row;
+      justify-content: center;
+      min-width: 800px;
+    }
+    .remove-subcontainer{
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+  
