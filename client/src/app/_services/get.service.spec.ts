@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LandService } from './land.service';
+import { GetService } from './get.service';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('LandService', () => {
-  let service: LandService;
+  let service: GetService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule]
     });
-    service = TestBed.inject(LandService);
+    service = TestBed.inject(GetService);
   });
 
   it('should be created', () => {
