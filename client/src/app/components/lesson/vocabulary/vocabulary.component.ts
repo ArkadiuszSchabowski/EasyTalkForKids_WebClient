@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
-import { LandService } from 'src/app/_services/land.service';
+import { GetService } from 'src/app/_services/get.service';
 import { GetLessonDto } from 'src/app/models/get-lesson-dto';
 
 @Component({
@@ -19,7 +19,7 @@ export class VocabularyComponent implements OnInit {
   imageUrl = 'http://localhost:5000/';
 
   constructor(
-    private landService: LandService,
+    private getService: GetService,
     private route: ActivatedRoute,
     public authService: AuthService
   ) {}
@@ -35,7 +35,7 @@ export class VocabularyComponent implements OnInit {
   }
 
   getLesson(lessonId: number) {
-    this.landService.getLesson(lessonId).subscribe({
+    this.getService.getLesson(lessonId).subscribe({
       next: (response: GetLessonDto) => {
         this.lessonContent = response;
         console.log(this.lessonContent)

@@ -10,7 +10,7 @@ import { GetWordDto } from '../models/get-word-dto';
 @Injectable({
   providedIn: 'root',
 })
-export class LandService {
+export class GetService {
   landSubject = new BehaviorSubject<number>(1);
   landSubject$ = this.landSubject.asObservable();
   apiUrl: string = environment.apiUrl;

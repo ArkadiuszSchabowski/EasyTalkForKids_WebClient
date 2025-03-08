@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/_services/auth.service';
-import { LandService } from 'src/app/_services/land.service';
+import { GetService } from 'src/app/_services/get.service';
 import { GetCategoryDto } from 'src/app/models/get-category-dto';
 import { GetLessonDto } from 'src/app/models/get-lesson-dto';
 import { GetTopicDto } from 'src/app/models/get-topic-dto';
@@ -36,7 +36,7 @@ export class ModeratorSearchPanelComponent {
   isModeratorPanel = false;
 
   constructor(
-    private landService: LandService,
+    private getService: GetService,
     public authService: AuthService
   ) {}
 
@@ -87,7 +87,7 @@ export class ModeratorSearchPanelComponent {
     if (!this.model.searchValue) {
       switch (this.model.type) {
         case 'lesson':
-          this.landService.getLessons().subscribe({
+          this.getService.getLessons().subscribe({
             next: (response) => {
               this.lessons = response;
               console.log(response);
@@ -96,7 +96,7 @@ export class ModeratorSearchPanelComponent {
           });
           break;
         case 'category':
-          this.landService.getCategories().subscribe({
+          this.getService.getCategories().subscribe({
             next: (response) => {
               this.categories = response;
               console.log(response);
@@ -105,7 +105,7 @@ export class ModeratorSearchPanelComponent {
           });
           break;
         case 'topic':
-          this.landService.getTopics().subscribe({
+          this.getService.getTopics().subscribe({
             next: (response) => {
               this.topics = response;
               console.log(response);
@@ -114,7 +114,7 @@ export class ModeratorSearchPanelComponent {
           });
           break;
         case 'word':
-          this.landService.getWords().subscribe({
+          this.getService.getWords().subscribe({
             next: (response) => {
               this.words = response;
               console.log(response);

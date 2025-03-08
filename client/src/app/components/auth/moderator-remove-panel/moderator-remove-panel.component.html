@@ -1,7 +1,154 @@
 <div
   id="remove-container"
   class="component-container"
-  [ngClass]="{ 'moderator-panel-margin': (authService.moderatorPanelSubject$ | async)}"
+  [ngClass]="{
+    'moderator-panel-margin': (authService.moderatorPanelSubject$ | async)
+  }"
 >
-  <p>remove container works!</p>
+  <div
+    id="option-container"
+    *ngIf="
+      !isRemoveLessonForm &&
+      !isRemoveCategoryForm &&
+      !isRemoveTopicForm &&
+      !isRemoveWordForm
+    "
+  >
+    <div id="lesson-container" class="remove-subcontainer">
+      <img src="../../../../assets/book.png" class="photo-subcontainer" />
+      <button
+        mat-raised-button
+        class="game-button"
+        (click)="showRemoveLessonForm()"
+      >
+        Usuń Lekcje
+      </button>
+    </div>
+    <div id="category-container" class="remove-subcontainer">
+      <img src="../../../../assets/category.png" class="photo-subcontainer" />
+      <button
+        mat-raised-button
+        class="game-button"
+        (click)="showRemoveCategoryForm()"
+      >
+        Usuń Kategorie
+      </button>
+    </div>
+    <div id="topic-container" class="remove-subcontainer">
+      <img src="../../../../assets/topic.png" class="photo-subcontainer" />
+      <button
+        mat-raised-button
+        class="game-button"
+        (click)="showRemoveTopicForm()"
+      >
+        Usuń Temat
+      </button>
+    </div>
+    <div id="word-container" class="remove-subcontainer">
+      <img src="../../../../assets/word.png" class="photo-subcontainer" />
+      <button
+        mat-raised-button
+        class="game-button"
+        (click)="showRemoveWordForm()"
+      >
+        Usuń Słowo
+      </button>
+    </div>
+  </div>
+  <div id="form-container" class="margin-top-20">
+    <form #lessonForm="ngForm" *ngIf="isRemoveLessonForm">
+      <mat-card>
+        <mat-card-content>
+          <div id="remove-lesson-form">
+            <mat-form-field [(ngModel)]="id" name="id">
+              <mat-label>Id lekcji</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              type="submit"
+              class="submit-white-button margin-top-20"
+              (click)="removeLesson()"
+            >
+              Usuń lekcję
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+    <form #categoryForm="ngForm" *ngIf="isRemoveCategoryForm">
+      <mat-card>
+        <mat-card-content>
+          <div id="remove-category-form">
+            <mat-form-field [(ngModel)]="id" name="id">
+              <mat-label>Id kategorii</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              type="submit"
+              class="submit-white-button margin-top-20"
+              (click)="removeCategory()"
+            >
+              Usuń kategorię
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+    <form #topicForm="ngForm" *ngIf="isRemoveTopicForm">
+      <mat-card>
+        <mat-card-content>
+          <div id="remove-topic-form">
+            <mat-form-field [(ngModel)]="id" name="id">
+              <mat-label>Id tematu</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              type="submit"
+              class="submit-white-button margin-top-20"
+              (click)="removeTopic()"
+            >
+              Usuń temat
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+    <form #wordForm="ngForm" *ngIf="isRemoveWordForm">
+      <mat-card>
+        <mat-card-content>
+          <div id="remove-word-form">
+            <mat-form-field [(ngModel)]="id" name="id">
+              <mat-label>Id Słowa</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              type="submit"
+              class="submit-white-button margin-top-20"
+              (click)="removeWord()"
+            >
+              Usuń słowo
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+    <button
+      id="reset-button"
+      mat-raised-button
+      class="game-button"
+      (click)="showModeratorPanel()"
+      *ngIf="
+        isRemoveLessonForm ||
+        isRemoveCategoryForm ||
+        isRemoveTopicForm ||
+        isRemoveWordForm
+      "
+    >
+      Powrót
+    </button>
+  </div>
 </div>
