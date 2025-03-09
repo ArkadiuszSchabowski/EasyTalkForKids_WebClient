@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModeratorRemovePanelComponent } from './moderator-remove-panel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ModeratorRemovePanelComponent', () => {
   let component: ModeratorRemovePanelComponent;
@@ -8,7 +9,8 @@ describe('ModeratorRemovePanelComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ModeratorRemovePanelComponent]
+      declarations: [ModeratorRemovePanelComponent],
+      imports: [HttpClientModule]
     });
     fixture = TestBed.createComponent(ModeratorRemovePanelComponent);
     component = fixture.componentInstance;
