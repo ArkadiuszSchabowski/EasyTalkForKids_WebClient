@@ -20,7 +20,9 @@ import { ModeratorRemovePanelComponent } from 'src/app/components/auth/moderator
     FormsModule,
     MaterialModule
   ], exports: [
-    ModeratorSearchPanelComponent
+    ModeratorSearchPanelComponent,
+    ModeratorAddPanelComponent,
+    ModeratorRemovePanelComponent
   ]
 })
 export class AuthModule { }
