@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/_services/auth.service';
+import { RemoveService } from 'src/app/_services/remove.service';
 
 @Component({
   selector: 'app-moderator-remove-panel',
@@ -7,58 +8,47 @@ import { AuthService } from 'src/app/_services/auth.service';
   styleUrls: ['./moderator-remove-panel.component.scss'],
 })
 export class ModeratorRemovePanelComponent {
-  isRemoveLessonForm = false;
-  isRemoveCategoryForm = false;
-  isRemoveTopicForm = false;
-  isRemoveWordForm = false;
+  isForm = false;
+  selectedOption: string = '';
+  formLabel: string = '';
 
   id: number = 0;
 
+  constructor(
+    public authService: AuthService,
+    private removeService: RemoveService
+  ) {}
 
-
-  constructor(public authService: AuthService) {}
-
-  showRemoveLessonForm(){
-    this.isRemoveLessonForm = true;
-    this.isRemoveCategoryForm = false;
-    this.isRemoveTopicForm = false;
-    this.isRemoveWordForm = false;
+  showForm(option: string) {
+    console.log('Hej');
+    if (option == 'lesson') {
+      this.selectedOption = 'lesson';
+      this.formLabel = 'lekcję';
+    }
+    if (option == 'category') {
+      this.selectedOption = 'category';
+      this.formLabel = 'kategorię';
+    }
+    if (option == 'topic') {
+      this.selectedOption = 'topic';
+      this.formLabel = 'temat';
+    }
+    if (option == 'word') {
+      this.selectedOption = 'word';
+      this.formLabel = 'słowo';
+    }
+    this.isForm = true;
   }
-  showRemoveCategoryForm(){
-    this.isRemoveLessonForm = false;
-    this.isRemoveCategoryForm = true;
-    this.isRemoveTopicForm = false;
-    this.isRemoveWordForm = false;
-  }
-  showRemoveTopicForm(){
-    this.isRemoveLessonForm = false;
-    this.isRemoveCategoryForm = false;
-    this.isRemoveTopicForm = true;
-    this.isRemoveWordForm = false;
-  }
-  showRemoveWordForm(){
-    this.isRemoveLessonForm = false;
-    this.isRemoveCategoryForm = false;
-    this.isRemoveTopicForm = false;
-    this.isRemoveWordForm = true;
-  }
-  showModeratorPanel(){
-    this.isRemoveLessonForm = false;
-    this.isRemoveCategoryForm = false;
-    this.isRemoveTopicForm = false;
-    this.isRemoveWordForm = false;
+  showModeratorPanel() {
+    this.isForm = false;
   }
 
-  removeLesson(){
-
-  }
-  removeCategory(){
-    
-  }
-  removeTopic(){
-    
-  }
-  removeWord(){
-    
+  remove(option: string) {
+    this.removeService.remove(this.id, option).subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => console.log(error.error),
+    });
   }
 }
