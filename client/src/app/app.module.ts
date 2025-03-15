@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthRoutingModule } from './auth-routing.module';
+import { LandRoutingModule } from './land-routing.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
@@ -21,6 +22,7 @@ import { AuthRoutingModule } from './auth-routing.module';
     HttpClientModule,
     AuthModule,
     AuthRoutingModule,
+    LandRoutingModule,
     LessonModule,
     MaterialModule,
     PublicModule,
