@@ -11,6 +11,7 @@ import { LessonModule } from './modules/lesson/lesson.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     AuthModule,
+    AuthRoutingModule,
     LessonModule,
     MaterialModule,
     PublicModule,

@@ -16,9 +16,7 @@ import { ReadingComponent } from './components/lesson/reading/reading.component'
 import { ListeningComponent } from './components/lesson/listening/listening.component';
 import { MemoryComponent } from './components/lesson/memory/memory.component';
 import { ReviewComponent } from './components/lesson/review/review.component';
-import { ModeratorSearchPanelComponent } from './components/auth/moderator-search-panel/moderator-search-panel.component';
-import { ModeratorAddPanelComponent } from './components/auth/moderator-add-panel/moderator-add-panel.component';
-import { ModeratorRemovePanelComponent } from './components/auth/moderator-remove-panel/moderator-remove-panel.component';
+import { AuthRoutingModule } from './auth-routing.module';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,22 +27,19 @@ const routes: Routes = [
   { path: 'land/4', component: LandOfSunnyDreamsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'moderator-search-panel', component: ModeratorSearchPanelComponent},
-  { path: 'moderator-add-panel', component: ModeratorAddPanelComponent},
-  { path: 'moderator-remove-panel', component: ModeratorRemovePanelComponent},
   { path: 'land/:landId/dialogue/:lessonId', component: DialogueComponent },
   { path: 'land/:landId/sentence/:lessonId', component: SentenceComponent },
   { path: 'land/:landId/theory/:lessonId', component: TheoryComponent },
   { path: 'land/:landId/vocabulary/:lessonId', component: VocabularyComponent },
-  {path: 'land/:landId/reading/:lessonId', component: ReadingComponent},
-  {path: 'land/:landId/review/:lessonId', component: ReviewComponent},
-  {path: 'land/:landId/memory/:lessonId', component: MemoryComponent},
-  {path: 'land/:landId/listening/:lessonId', component: ListeningComponent},
+  { path: 'land/:landId/reading/:lessonId', component: ReadingComponent },
+  { path: 'land/:landId/review/:lessonId', component: ReviewComponent },
+  { path: 'land/:landId/memory/:lessonId', component: MemoryComponent },
+  { path: 'land/:landId/listening/:lessonId', component: ListeningComponent },
   { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), AuthRoutingModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

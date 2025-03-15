@@ -1,0 +1,9 @@
+<div
+  id="add-container"
+  class="component-container"
+  [ngClass]="{
+    'moderator-panel-margin': (authService.moderatorPanelSubject$ | async)
+  }"
+>
+  <p>Add container works</p>
+</div>
