@@ -8,6 +8,7 @@ import { ModeratorSearchPanelComponent } from './components/auth/moderator-searc
 import { AddTopicComponent } from './components/auth/forms/add-topic/add-topic.component';
 import { AddLessonComponent } from './components/auth/forms/add-lesson/add-lesson.component';
 import { AddWordComponent } from './components/auth/forms/add-word/add-word.component';
+import { AddCategoryComponent } from './components/auth/forms/add-category/add-category.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'moderator-add-panel/add-topic', component: AddTopicComponent },
   { path: 'moderator-add-panel/add-lesson', component: AddLessonComponent },
   { path: 'moderator-add-panel/add-word', component: AddWordComponent },
+  { path: 'moderator-add-panel/add-category', component: AddCategoryComponent },
 ];
 
 @NgModule({
