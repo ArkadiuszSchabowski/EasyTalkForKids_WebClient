@@ -6,14 +6,15 @@ import { MaterialModule } from '../material/material.module';
 import { ModeratorSearchPanelComponent } from 'src/app/components/auth/moderator-search-panel/moderator-search-panel.component';
 import { ModeratorAddPanelComponent } from 'src/app/components/auth/moderator-add-panel/moderator-add-panel.component';
 import { ModeratorRemovePanelComponent } from 'src/app/components/auth/moderator-remove-panel/moderator-remove-panel.component';
-
-
+import { AddTopicComponent } from 'src/app/components/auth/forms/add-topic/add-topic.component';
+import { AuthRoutingModule } from 'src/app/auth-routing.module';
 
 @NgModule({
   declarations: [
     ModeratorSearchPanelComponent,
     ModeratorAddPanelComponent, 
-    ModeratorRemovePanelComponent
+    ModeratorRemovePanelComponent,
+    AddTopicComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +24,8 @@ import { ModeratorRemovePanelComponent } from 'src/app/components/auth/moderator
   ], exports: [
     ModeratorSearchPanelComponent,
     ModeratorAddPanelComponent,
-    ModeratorRemovePanelComponent
+    ModeratorRemovePanelComponent,
+    AddTopicComponent
   ]
 })
 export class AuthModule { }
