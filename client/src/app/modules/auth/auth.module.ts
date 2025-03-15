@@ -18,7 +18,8 @@ import { ModeratorRemovePanelComponent } from 'src/app/components/auth/moderator
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    AuthRoutingModule
   ], exports: [
     ModeratorSearchPanelComponent,
     ModeratorAddPanelComponent,
