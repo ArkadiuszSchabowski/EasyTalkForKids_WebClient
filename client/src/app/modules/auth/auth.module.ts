@@ -8,13 +8,15 @@ import { ModeratorAddPanelComponent } from 'src/app/components/auth/moderator-ad
 import { ModeratorRemovePanelComponent } from 'src/app/components/auth/moderator-remove-panel/moderator-remove-panel.component';
 import { AddTopicComponent } from 'src/app/components/auth/forms/add-topic/add-topic.component';
 import { AuthRoutingModule } from 'src/app/auth-routing.module';
+import { AddLessonComponent } from 'src/app/components/auth/forms/add-lesson/add-lesson.component';
 
 @NgModule({
   declarations: [
     ModeratorSearchPanelComponent,
     ModeratorAddPanelComponent, 
     ModeratorRemovePanelComponent,
-    AddTopicComponent
+    AddTopicComponent,
+    AddLessonComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { AuthRoutingModule } from 'src/app/auth-routing.module';
     ModeratorSearchPanelComponent,
     ModeratorAddPanelComponent,
     ModeratorRemovePanelComponent,
-    AddTopicComponent
+    AddTopicComponent,
+    AddLessonComponent
   ]
 })
 export class AuthModule { }
