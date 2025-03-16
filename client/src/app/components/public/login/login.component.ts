@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/_services/auth.service';
 import { LoginDto } from 'src/app/models/login-dto';
-import { LoginErrorDto } from 'src/app/models/login-error-dto';
+import { LoginErrorDto } from 'src/app/models/error/login-error';
 
 @Component({
   selector: 'app-login',

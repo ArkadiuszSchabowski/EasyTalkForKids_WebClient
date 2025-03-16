@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/_services/auth.service';
 import { RegisterDto } from 'src/app/models/register';
-import { RegisterErrorDto } from 'src/app/models/register-error';
+import { RegisterErrorDto } from 'src/app/models/error/register-error';
 
 @Component({
   selector: 'app-register',

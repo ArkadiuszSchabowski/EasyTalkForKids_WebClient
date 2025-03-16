@@ -2,10 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../environments/development';
-import { GetLessonDto } from '../models/get-lesson-dto';
-import { GetCategoryDto } from '../models/get-category-dto';
-import { GetTopicDto } from '../models/get-topic-dto';
-import { GetWordDto } from '../models/get-word-dto';
+import { GetLessonDto } from '../models/get/get-lesson-dto';
+import { GetCategoryDto } from '../models/get/get-category-dto';
+import { GetTopicDto } from '../models/get/get-topic-dto';
+import { GetWordDto } from '../models/get/get-word-dto';
 
 @Injectable({
   providedIn: 'root',

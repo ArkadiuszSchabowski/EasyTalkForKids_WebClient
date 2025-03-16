@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
 import { GetService } from 'src/app/_services/get.service';
-import { GetLessonDto } from 'src/app/models/get-lesson-dto';
+import { GetLessonDto } from 'src/app/models/get/get-lesson-dto';
 
 @Component({
   selector: 'app-vocabulary',
