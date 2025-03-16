@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/_services/auth.service';
 import { GetService } from 'src/app/_services/get.service';
-import { GetCategoryDto } from 'src/app/models/get-category-dto';
-import { GetLessonDto } from 'src/app/models/get-lesson-dto';
-import { GetTopicDto } from 'src/app/models/get-topic-dto';
-import { GetWordDto } from 'src/app/models/get-word-dto';
+import { GetCategoryDto } from 'src/app/models/get/get-category-dto';
+import { GetLessonDto } from 'src/app/models/get/get-lesson-dto';
+import { GetTopicDto } from 'src/app/models/get/get-topic-dto';
+import { GetWordDto } from 'src/app/models/get/get-word-dto';
 
 import { SearchDto } from 'src/app/models/search-dto';
-import { SearchErrorDto } from 'src/app/models/search-error-dto';
+import { SearchErrorDto } from 'src/app/models/error/search-error';
 
 @Component({
   selector: 'app-moderator-panel',
