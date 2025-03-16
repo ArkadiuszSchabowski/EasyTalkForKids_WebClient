@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddTopicComponent } from './add-topic.component';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/modules/material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AddTopicComponent', () => {
   let component: AddTopicComponent;
@@ -8,7 +11,8 @@ describe('AddTopicComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AddTopicComponent]
+      declarations: [AddTopicComponent],
+      imports: [FormsModule, MaterialModule, BrowserAnimationsModule]
     });
     fixture = TestBed.createComponent(AddTopicComponent);
     component = fixture.componentInstance;
