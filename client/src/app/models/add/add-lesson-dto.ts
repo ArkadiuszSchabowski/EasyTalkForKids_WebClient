@@ -1,4 +1,5 @@
 export class AddLessonDto {
-    topicId: number = 0;
+    polishName: string = ''
+    englishName: string = ''
     categoryId: number = 0;
 }
