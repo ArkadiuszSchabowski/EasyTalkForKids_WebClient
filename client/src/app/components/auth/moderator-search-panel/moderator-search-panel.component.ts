@@ -4,7 +4,6 @@ import { AuthService } from 'src/app/_services/auth.service';
 import { GetService } from 'src/app/_services/get.service';
 import { GetCategoryDto } from 'src/app/models/get/get-category-dto';
 import { GetLessonDto } from 'src/app/models/get/get-lesson-dto';
-import { GetTopicDto } from 'src/app/models/get/get-topic-dto';
 import { GetWordDto } from 'src/app/models/get/get-word-dto';
 
 import { SearchDto } from 'src/app/models/search-dto';
@@ -22,7 +21,6 @@ export class ModeratorSearchPanelComponent {
 
   lessons: GetLessonDto[] = [];
   categories: GetCategoryDto[] = [];
-  topics: GetTopicDto[] = [];
   words: GetWordDto[] = [];
 
   types: any = [
@@ -99,15 +97,6 @@ export class ModeratorSearchPanelComponent {
           this.getService.getCategories().subscribe({
             next: (response) => {
               this.categories = response;
-              console.log(response);
-            },
-            error: (error) => console.log(error),
-          });
-          break;
-        case 'topic':
-          this.getService.getTopics().subscribe({
-            next: (response) => {
-              this.topics = response;
               console.log(response);
             },
             error: (error) => console.log(error),

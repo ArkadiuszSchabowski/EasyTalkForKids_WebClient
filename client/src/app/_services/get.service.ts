@@ -4,7 +4,6 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from '../environments/development';
 import { GetLessonDto } from '../models/get/get-lesson-dto';
 import { GetCategoryDto } from '../models/get/get-category-dto';
-import { GetTopicDto } from '../models/get/get-topic-dto';
 import { GetWordDto } from '../models/get/get-word-dto';
 
 @Injectable({
@@ -31,14 +30,6 @@ export class GetService {
 
   getWords(){
     return this.http.get<GetWordDto[]>(this.apiUrl + `word`);
-  }
-
-  getTopic(id: number){
-    return this.http.get<GetTopicDto>(this.apiUrl + `topic/${id}`);
-  }
-
-  getTopics(){
-    return this.http.get<GetTopicDto[]>(this.apiUrl + `topic`);
   }
 
   getCategory(id: number){
