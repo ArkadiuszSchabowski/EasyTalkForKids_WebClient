@@ -26,7 +26,6 @@ export class ModeratorSearchPanelComponent {
   types: any = [
     { value: 'lesson', viewValue: 'Lekcja' },
     { value: 'category', viewValue: 'Kategoria' },
-    { value: 'topic', viewValue: 'Temat' },
     { value: 'word', viewValue: 'Słowo' },
   ];
 
@@ -52,12 +51,6 @@ export class ModeratorSearchPanelComponent {
         this.results = [
           { value: 'id', viewValue: 'Id' },
           { value: 'Name', viewValue: 'Nazwa' },
-        ];
-        break;
-      case 'topic':
-        this.results = [
-          { value: 'id', viewValue: 'Id' },
-          { value: 'name', viewValue: 'Nazwa' },
         ];
         break;
       case 'word':
