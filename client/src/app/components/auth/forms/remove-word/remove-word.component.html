@@ -1,0 +1,30 @@
+<div
+  id="home-container"
+  class="component-container"
+  [ngClass]="{
+    'moderator-panel-margin': authService.moderatorPanelSubject$ | async
+  }"
+>
+  <div id="form-container" class="margin-top-20">
+    <form #form="ngForm">
+      <mat-card>
+        <mat-card-content>
+          <div id="remove-form">
+            <mat-form-field>
+              <mat-label>Id</mat-label>
+              <input matInput [(ngModel)]="id" name="id" />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              type="submit"
+              class="submit-white-button margin-top-20"
+              (click)="remove(id)"
+            >
+              Usuń Słowo
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>

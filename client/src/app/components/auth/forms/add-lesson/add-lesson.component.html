@@ -5,5 +5,35 @@
     'moderator-panel-margin': (authService.moderatorPanelSubject$ | async)
   }"
 >
-  <p>Add lesson container works</p>
+  <form #ngForm="ngForm" autocomplete="off" (ngSubmit)="createLesson(ngForm)">
+    <mat-card>
+      <mat-card-content>
+        <div id="form">
+          <label class="title-label">Dodaj Lekcję</label>
+          <mat-form-field class="margin-top-20">
+            <mat-label>Polska nazwa lekcji</mat-label>
+            <input matInput name="polishName" [(ngModel)]="model.polishName"/>
+          </mat-form-field>
+          <div *ngIf="errors.polishName" class="error-form">
+            <span>{{ errors.polishName }}</span>
+          </div>
+          <mat-form-field class="margin-top-20">
+            <mat-label>Angielska nazwa lekcji</mat-label>
+            <input matInput name="englishName" [(ngModel)]="model.englishName"/>
+          </mat-form-field>
+          <div *ngIf="errors.englishName" class="error-form">
+            <span>{{ errors.englishName }}</span>
+          </div>
+          <mat-form-field class="margin-top-20">
+            <mat-label>Id kategorii</mat-label>
+            <input matInput name="categoryId" [(ngModel)]="model.categoryId"/>
+          </mat-form-field>
+          <div *ngIf="errors.categoryId" class="error-form">
+            <span>{{ errors.categoryId }}</span>
+          </div>
+          <button mat-raised-button type="submit" class="submit-white-button margin-top-20">Dodaj</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
 </div>

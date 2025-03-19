@@ -5,13 +5,13 @@
     'moderator-panel-margin': (authService.moderatorPanelSubject$ | async)
   }"
 >
-  <div id="option-container" *ngIf="!isForm">
+  <div id="option-container">
     <div id="lesson-container" class="remove-subcontainer">
       <img src="../../../../assets/book.png" class="photo-subcontainer" />
       <button
         mat-raised-button
         class="game-button"
-        (click)="showForm('lesson')"
+        routerLink="/moderator-remove-panel/remove-lesson"
       >
         Usuń Lekcje
       </button>
@@ -21,47 +21,20 @@
       <button
         mat-raised-button
         class="game-button"
-        (click)="showForm('category')"
+        routerLink="/moderator-remove-panel/remove-category"
       >
         Usuń Kategorie
       </button>
     </div>
     <div id="word-container" class="remove-subcontainer">
       <img src="../../../../assets/word.png" class="photo-subcontainer" />
-      <button mat-raised-button class="game-button" (click)="showForm('word')">
+      <button
+        mat-raised-button
+        class="game-button"
+        routerLink="/moderator-remove-panel/remove-word"
+      >
         Usuń Słowo
       </button>
     </div>
-  </div>
-  <div id="form-container" class="margin-top-20">
-    <form #lessonForm="ngForm" *ngIf="isForm">
-      <mat-card>
-        <mat-card-content>
-          <div id="remove-form">
-            <mat-form-field>
-              <mat-label>Id</mat-label>
-              <input matInput [(ngModel)]="id" name="id" />
-            </mat-form-field>
-            <button
-              mat-raised-button
-              type="submit"
-              class="submit-white-button margin-top-20"
-              (click)="remove(selectedOption)"
-            >
-              Usuń {{ formLabel }}
-            </button>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </form>
-    <button
-      id="reset-button"
-      mat-raised-button
-      class="game-button"
-      (click)="showModeratorPanel()"
-      *ngIf="isForm"
-    >
-      Powrót
-    </button>
   </div>
 </div>
