@@ -20,14 +20,17 @@ describe('AddCategoryComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [AddCategoryComponent],
-      imports: [ToastrModule, FormsModule, MaterialModule, BrowserAnimationsModule],
-      providers: [
-        { provide: ToastrService, useClass: MockToastrService}
-      ]
+      imports: [
+        ToastrModule,
+        FormsModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+      ],
+      providers: [{ provide: ToastrService, useClass: MockToastrService }],
     });
     fixture = TestBed.createComponent(AddCategoryComponent);
     component = fixture.componentInstance;
-    toastrService = TestBed.inject(ToastrService); 
+    toastrService = TestBed.inject(ToastrService);
     fixture.detectChanges();
   });
 
