@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { AddService } from 'src/app/_services/add.service';
 import { AuthService } from 'src/app/_services/auth.service';
 import { AddLessonDto } from 'src/app/models/add/add-lesson-dto';
 import { LessonError } from 'src/app/models/error/lesson-error';
@@ -14,7 +15,11 @@ export class AddLessonComponent {
   model: AddLessonDto = new AddLessonDto();
   errors: LessonError = new LessonError();
 
-  constructor(public authService: AuthService, private toastr: ToastrService) {}
+  constructor(
+    public authService: AuthService,
+    private toastr: ToastrService,
+    private addService: AddService
+  ) {}
 
   createLesson(lessonForm: NgForm) {
     this.errors = new LessonError();
@@ -31,13 +36,15 @@ export class AddLessonComponent {
       this.errors.englishName = 'Angielska nazwa jest wymagana!';
     }
 
-    if (this.errors.polishName || this.errors.englishName) {
+    if (this.errors.categoryId || this.errors.polishName || this.errors.englishName) {
       return;
     }
-    console.log(this.model);
+
+    this.addService.addLesson(this.model).subscribe({
+      next: () => this.toastr.success('Lekcja została dodana!'),
+      error: (error) => this.toastr.error(error.error),
+    });
 
     lessonForm.resetForm();
-
-    this.toastr.success('Lekcja została dodana!');
   }
 }

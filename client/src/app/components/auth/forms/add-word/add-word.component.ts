@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { AddService } from 'src/app/_services/add.service';
 import { AuthService } from 'src/app/_services/auth.service';
 import { AddWordDto } from 'src/app/models/add/add-word-dto';
 import { WordError } from 'src/app/models/error/word-error';
@@ -14,7 +15,11 @@ export class AddWordComponent {
   model: AddWordDto = new AddWordDto();
   errors: WordError = new WordError();
 
-  constructor(public authService: AuthService, private toastr: ToastrService) {}
+  constructor(
+    public authService: AuthService,
+    private toastr: ToastrService,
+    private addService: AddService
+  ) {}
 
   createWord(wordForm: NgForm) {
     this.errors = new WordError();
@@ -31,13 +36,15 @@ export class AddWordComponent {
       this.errors.englishName = 'Angielska nazwa jest wymagana!';
     }
 
-    if (this.errors.polishName || this.errors.englishName) {
+    if (this.errors.lessonId || this.errors.polishName || this.errors.englishName) {
       return;
     }
-    console.log(this.model);
+
+    this.addService.addWord(this.model).subscribe({
+      next: () => this.toastr.success('Słowo zostało dodane!'),
+      error: (error) => this.toastr.error(error.error),
+    });
 
     wordForm.resetForm();
-
-    this.toastr.success('Lekcja została dodana!');
   }
 }
