@@ -5,6 +5,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/app/modules/material/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AddCategoryComponent', () => {
   let component: AddCategoryComponent;
@@ -25,6 +26,7 @@ describe('AddCategoryComponent', () => {
         FormsModule,
         MaterialModule,
         BrowserAnimationsModule,
+        HttpClientModule
       ],
       providers: [{ provide: ToastrService, useClass: MockToastrService }],
     });
