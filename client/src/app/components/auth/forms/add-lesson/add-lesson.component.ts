@@ -41,8 +41,7 @@ export class AddLessonComponent {
     }
 
     this.addService.addLesson(this.model).subscribe({
-      next: () => this.toastr.success('Lekcja została dodana!'),
-      error: (error) => this.toastr.error(error.error),
+      next: () => this.toastr.success('Lekcja została dodana!')
     });
 
     lessonForm.resetForm();

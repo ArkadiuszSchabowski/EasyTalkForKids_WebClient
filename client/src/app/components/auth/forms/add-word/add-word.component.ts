@@ -41,8 +41,7 @@ export class AddWordComponent {
     }
 
     this.addService.addWord(this.model).subscribe({
-      next: () => this.toastr.success('Słowo zostało dodane!'),
-      error: (error) => this.toastr.error(error.error),
+      next: () => this.toastr.success('Słowo zostało dodane!')
     });
 
     wordForm.resetForm();
