@@ -37,8 +37,7 @@ export class AddCategoryComponent {
     }
 
     this.addService.addCategory(this.model).subscribe({
-      next: () => this.toastr.success('Kategoria została dodana!'),
-      error: (error) => this.toastr.error(error.error),
+      next: () => this.toastr.success('Kategoria została dodana!')
     });
 
     categoryForm.resetForm();
