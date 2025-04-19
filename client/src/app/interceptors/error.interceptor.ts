@@ -28,6 +28,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               );
               break;
             case 400:
+            case 404:
             case 409:
               toastr.error(error.error);
               break;
